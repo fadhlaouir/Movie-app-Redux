@@ -1,0 +1,44 @@
+.starsRating {
+    top: 50%;
+    left: 50%;
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.starsRating input {
+    display: none;
+}
+
+.starsRating label {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+}
+
+.starsRating label:before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.starsRating label:after {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 20px;
+    color: #FFFF00;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.starsRating label:hover:after,
+.starsRating input:hover~label:after,
+.starsRating input:checked~label:after {
+    opacity: 1;
+}
